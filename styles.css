@@ -410,3 +410,101 @@ footer{background:#f5f3ed}
  .practice{padding-top:55px}
  .path-card:hover{transform:none}
 }
+
+/* Compact spacing pass: bring related content closer without shrinking touch targets. */
+.hero{min-height:610px;height:min(730px,calc(100svh - 98px))}
+.hero-top{padding-top:28px}
+.hero-heading{padding-top:45px;padding-bottom:135px}
+.hero-aside{margin-top:23px}
+.hero-aside .text-link{margin-top:16px}
+.hero-open{bottom:145px}
+.hero-caption{bottom:88px}
+.hero-controls{bottom:83px}
+.service-paths{padding-top:55px;padding-bottom:55px}
+.service-paths .section-heading h2{margin-top:16px}
+.path-grid{margin-top:28px;gap:20px}
+.path-card{padding:24px}
+.path-symbol{margin:20px 0 18px;font-size:54px}
+.path-card>p{min-height:0}
+.path-link{margin-top:20px;padding-top:16px}
+.intro{padding-top:55px;padding-bottom:55px}
+.intro-columns{margin-top:24px;gap:30px}
+.intro-columns .text-link{margin-top:16px}
+.perspectives{padding-top:55px;padding-bottom:32px}
+.perspectives-grid{margin-top:30px;grid-template-rows:250px 250px;gap:20px}
+.perspectives-bottom{margin-top:24px;padding-top:18px}
+.practice{padding-top:60px;padding-bottom:60px}
+.practice-visual{height:470px}
+.practice-copy h2{margin-top:18px;margin-bottom:22px}
+.practice-copy>p:not(.eyebrow){margin-top:13px}
+.director{padding:20px 0;margin:18px 0}
+.statement{padding-top:45px;padding-bottom:30px}
+.statement h2{margin:28px 0 30px}
+.statement-bottom{padding-top:18px}
+.expertise{padding-top:55px;padding-bottom:55px}
+.expertise h2{margin:18px 0}
+.expertise-intro .text-link{margin-top:20px}
+.work{padding-top:55px;padding-bottom:50px}
+.work-toolbar{margin-top:28px}
+.project-grid{padding-top:24px;gap:32px 24px}
+.project-card:first-child .project-photo{height:410px}
+.project-photo{height:310px}
+.work-footnote{margin-top:30px;padding-top:20px}
+.process{padding-top:45px;padding-bottom:50px}
+.process-grid{margin-top:30px}
+.process-grid h3{margin-top:20px}
+.contact{padding-top:40px;padding-bottom:45px}
+.contact-heading{margin:25px 0 30px}
+.contact-bottom{padding-top:28px}
+footer{padding-top:35px}
+.footer-top{padding-bottom:30px}
+@media(min-width:761px) and (max-width:1050px){
+ .hero{min-height:600px;height:auto}
+ .hero-heading{padding-top:45px}
+ .perspectives-grid{grid-template-rows:230px 230px}
+ .practice-visual{height:440px}
+}
+@media(max-width:760px){
+ .hero{height:auto;min-height:0}
+ .hero-top{padding-top:23px}
+ .hero-heading{padding-top:40px;padding-bottom:145px}
+ .hero-aside{margin-top:20px}
+ .hero-aside .text-link{margin-top:12px}
+ .hero-open{bottom:90px}
+ .hero-caption{bottom:109px}
+ .hero-controls{bottom:18px}
+ .service-paths,.intro,.practice,.expertise,.work{padding-top:38px;padding-bottom:38px}
+ .section-label{margin-bottom:22px}
+ .section-heading h2{margin-top:14px}
+ .path-grid{gap:14px;margin-top:24px}
+ .path-card{padding:20px}
+ .path-symbol{margin:0;font-size:46px}
+ .path-card h3{margin-top:12px;margin-bottom:10px}
+ .path-link{margin-top:17px;padding-top:12px}
+ .intro-columns{margin-top:20px;gap:18px}
+ .perspectives{padding-top:38px;padding-bottom:28px}
+ .perspective-intro{margin-top:18px}
+ .perspectives-grid{grid-template-rows:none;margin-top:24px;gap:18px}
+ .perspectives-bottom{margin-top:22px;padding-top:18px}
+ .practice{gap:28px}
+ .practice-visual{height:320px;padding:45px 20px 110px}
+ .practice-year{font-size:64px}
+ .practice-copy h2{margin-top:18px;margin-bottom:22px}
+ .statement{padding-top:35px;padding-bottom:26px}
+ .statement h2{margin-top:23px;margin-bottom:26px}
+ .expertise-intro .text-link{margin-top:18px}
+ .service-list{margin-top:26px}
+ .project-grid{padding-top:20px;gap:27px}
+ .project-photo,.project-card:first-child .project-photo{height:auto}
+ .work-toolbar{margin-top:22px}
+ .work-footnote{margin-top:25px}
+ .process{padding-top:36px;padding-bottom:38px}
+ .process-grid{margin-top:25px;gap:23px}
+ .contact{padding-top:28px;padding-bottom:35px}
+ .contact-heading{margin-top:20px;margin-bottom:25px}
+ .contact-bottom{padding-top:22px}
+ .contact form{margin-top:30px}
+ footer{padding-top:30px}
+ .footer-top{gap:23px;padding-bottom:20px}
+}
+@media(max-width:350px){.hero{min-height:0}.hero-heading{padding-top:34px}}
