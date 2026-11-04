@@ -72,7 +72,7 @@ document.querySelector('#privacy-open').addEventListener('click',()=>{privacyDia
 let slideIndex=0;const heroImage=document.querySelector('#hero-image'),heroOpen=document.querySelector('.hero-open');
 function changeSlide(direction){slideIndex=(slideIndex+direction+3)%3;const p=inspirations[slideIndex];heroImage.src=p.image;heroImage.alt=p.alt;heroOpen.dataset.inspiration=slideIndex;document.querySelector('#slide-count').textContent=`${String(slideIndex+1).padStart(2,'0')} / 03`;}
 document.querySelector('#slide-prev').addEventListener('click',()=>changeSlide(-1));document.querySelector('#slide-next').addEventListener('click',()=>changeSlide(1));
-document.querySelector('#enquiry-form').addEventListener('submit',e=>{e.preventDefault();const form=e.currentTarget;if(!form.reportValidity())return;const data=new FormData(form),subject=`Website enquiry — ${data.get('service')}`,body=`Name: ${data.get('name')}\nEmail: ${data.get('email')}\nService: ${data.get('service')}\nProject location: ${data.get('location')||'Not specified'}\n\n${data.get('message')}`;window.location.href=`mailto:kvt3archies@optusnet.com.au?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;document.querySelector('#form-status').textContent='Your email app should open with a draft. Review it and send it to complete your enquiry. If it does not open, email kvt3archies@optusnet.com.au directly.';});
+// Enquiries use the form's native HTTPS POST with provider spam protection.
 document.querySelector('#year').textContent=new Date().getFullYear();
 
 // Progressive enhancement: content stays visible if motion or observer support is unavailable.

@@ -12,7 +12,7 @@ Import `sanjeek/kvt3archies`. Framework: **Other**. No build command, no environ
 
 ## Features
 
-Responsive editorial layout; mobile navigation; three-image hero; five portfolio entries; image/drawing filters; keyboard-accessible native dialog viewer; services accordion; email enquiry composer; privacy information; reduced-motion support; social metadata and favicon.
+Responsive editorial layout; mobile navigation; three-image hero; five portfolio entries; image/drawing filters; keyboard-accessible native dialog viewer; services accordion; direct email enquiry form; privacy information; reduced-motion support; social metadata and favicon.
 
 ## Content
 
@@ -20,7 +20,8 @@ Company information adapted from https://kvt3archies.com/ and its `/about/`, `/s
 
 The opening slideshow uses modern Unsplash reference photographs, clearly labelled as inspiration and not as KVT 3 projects. The original pictures remain in the Portfolio archive. Portfolio images load directly from the existing KVT 3 Architects website; keep those URLs available until originals can be copied into the repository. Google Fonts has system-font fallbacks. Portfolio headings are neutral editorial labels, not verified project names or locations. Replace labels/descriptions in `script.js` with confirmed project information and credits when available.
 
-The enquiry form prepares a `mailto:` draft. It does not send email or submit information to a server; visitors send the draft through their own email application. A future server email integration requires a chosen provider and credentials stored only in server environment variables.
+The enquiry form posts directly to FormSubmit for forwarding to **kvt3archies@optusnet.com.au**. No API key is required. FormSubmit handles spam protection and redirects accepted submissions to `thank-you.html`. The first submission triggers an activation email; the inbox owner must confirm it before delivery works. If the sending domain changes, check activation again. Submit a real test from the live site, activate the form using the inbox email, then submit another test and verify delivery. Do not regard deployment success as an inbox delivery test. Keep the hidden `_next` field aligned with the production thank-you URL.
+
 
 ## Checks
 
