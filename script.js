@@ -39,7 +39,7 @@ projects.forEach((p,index)=>{
  const card=document.createElement('button');card.className='project-card';card.dataset.kind=p.kind;card.dataset.open=index;card.setAttribute('aria-label',`Explore ${p.title}`);
  const photo=document.createElement('div');photo.className='project-photo';
  const img=document.createElement('img');img.src=p.image;img.alt=p.alt;img.loading='lazy';img.decoding='async';
- const arrow=document.createElement('span');arrow.className='project-arrow';arrow.setAttribute('aria-hidden','true');arrow.textContent='↗';photo.append(img,arrow);
+ const arrow=document.createElement('span');arrow.className='project-arrow';arrow.setAttribute('aria-hidden','true');arrow.textContent='View image';photo.append(img,arrow);
  const caption=document.createElement('div');caption.className='project-caption';const copy=document.createElement('div');
  const label=document.createElement('p');label.className='eyebrow';label.textContent=p.label;const title=document.createElement('h3');title.textContent=p.title;const snippet=document.createElement('p');snippet.className='project-snippet';snippet.textContent='A dialogue between site, form and the people who use a space.';copy.append(label,title,snippet);
  const number=document.createElement('span');number.className='project-number';number.textContent=String(index+1).padStart(2,'0');caption.append(copy,number);card.append(photo,caption);grid.append(card);

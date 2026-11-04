@@ -508,3 +508,74 @@ footer{padding-top:35px}
  .footer-top{gap:23px;padding-bottom:20px}
 }
 @media(max-width:350px){.hero{min-height:0}.hero-heading{padding-top:34px}}
+
+/* Quiet controls: labels for actions, icons only where direction has meaning. */
+.text-link{gap:0;min-height:44px}
+.text-link:hover{gap:0}
+.header-contact{font-size:13px;padding:13px 22px}
+.hero-open{width:auto;height:auto;border-radius:3px;min-height:46px;padding:13px 22px;gap:0;background:#f5f3ede8}
+.hero-open span{font-size:12px;font-weight:550;line-height:1.4}
+.hero-open:hover{transform:none}
+.hero-controls button{display:grid;place-items:center}
+.menu-lines{flex-shrink:0}
+.perspective-card>div{align-items:flex-end}
+.perspective-card{border-radius:4px}
+.perspective-card h3{max-width:90%}
+.perspective-card>div>span{display:none}
+.project-arrow{width:auto;height:auto;min-height:36px;padding:10px 14px;border-radius:3px;font-size:11px;line-height:1.3;letter-spacing:.2px;transform:none;background:#f5f3edf0}
+.project-card:hover .project-arrow{transform:none}
+.project-photo{border-radius:4px}
+.path-card{padding:28px;border-radius:4px}
+.path-card h3{margin-top:30px}
+.path-link{font-weight:500;min-height:44px}
+.contact-heading{display:block}
+.contact-heading>span{display:none}
+.form-submit button{justify-content:center;min-width:175px;font-size:13px;min-height:50px}
+.phone-contact a:last-child{justify-content:center}
+@media(min-width:1060px){
+ .perspectives-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:none;align-items:stretch;gap:22px}
+ .perspective-card,.perspective-card:first-child{grid-row:auto;height:auto;aspect-ratio:.76}
+ .perspective-card h3,.perspective-card:first-child h3{font-size:clamp(29px,2.8vw,44px)}
+ .perspective-card:first-child{margin-top:0}
+ .perspective-card:nth-child(2){margin-top:30px;margin-bottom:-30px}
+ .perspectives-bottom{margin-top:55px}
+}
+@media(max-width:760px){
+ header{height:72px;padding-left:20px;padding-right:20px}
+ .logo>span{font-size:32px;letter-spacing:-2.5px}
+ .logo i{font-size:37px}
+ .logo small{font-size:6px;letter-spacing:3.2px;margin-top:6px}
+ .menu-toggle{min-width:84px;min-height:48px;gap:18px;font-size:13px}
+ #mobile-menu{top:72px}
+ .hero-open{right:20px;bottom:100px;min-height:44px;padding:11px 15px;width:auto;height:auto;border-radius:3px}
+ .hero-open span{font-size:11px}
+ .hero-controls button{width:44px;height:44px}
+ .hero-aside .text-link{min-width:0;width:max-content;font-size:13px;padding:10px 0;min-height:44px}
+ .perspectives-grid{gap:18px}
+ .perspective-card,.perspective-card:first-child{aspect-ratio:4/3;grid-row:auto}
+ .perspective-card:after{background:linear-gradient(180deg,#15231b20 20%,transparent 30%,#132417b8)}
+ .perspective-card>div{left:20px;bottom:22px;right:20px}
+ .perspective-card h3,.perspective-card:first-child h3{font-size:30px;line-height:1.08;letter-spacing:-.4px}
+ .perspective-number{top:18px;left:20px;font-size:10px;letter-spacing:1px}
+ .perspectives-bottom{margin-top:25px}
+ .perspectives-bottom .text-link{width:max-content}
+ .project-arrow{right:14px;bottom:14px;min-height:34px;padding:9px 12px;font-size:10px}
+ .path-card{display:block;padding:23px}
+ .path-card h3{font-size:25px;margin:20px 0 12px}
+ .path-card>p{max-width:none}
+ .path-link{margin-top:18px;font-size:13px}
+ .contact h2{font-size:clamp(32px,8.5vw,48px)}
+ .form-submit button{font-size:14px;min-height:52px;width:100%;justify-content:center}
+ .phone-contact{grid-template-columns:1fr 1.45fr;gap:9px;padding:9px 16px calc(9px + env(safe-area-inset-bottom,0px));border-top:1px solid #cbd2c2}
+ .phone-contact a{min-height:46px;font-size:12px;font-weight:550;border-radius:4px;letter-spacing:0}
+ .phone-contact a:last-child{justify-content:center;padding:0 12px}
+ body{padding-bottom:calc(65px + env(safe-area-inset-bottom,0px))}
+ .dialog-close{border:1px solid #d1d8c8;border-radius:3px;min-height:44px}
+ .dialog-nav button{min-height:48px;font-size:13px}
+}
+@media(max-width:350px){
+ header{padding-left:16px;padding-right:16px}
+ .phone-contact{padding-left:12px;padding-right:12px}
+ .phone-contact a{font-size:11px}
+ .perspective-card h3,.perspective-card:first-child h3{font-size:27px}
+}
