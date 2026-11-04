@@ -92,3 +92,9 @@ function updateScroll(){
 }
 window.addEventListener('scroll',()=>{if(!scrollQueued){scrollQueued=true;window.requestAnimationFrame(updateScroll);}},{passive:true});
 updateScroll();
+
+// Service links open the relevant panel before the browser scrolls to it.
+document.querySelectorAll('.path-card').forEach(link=>link.addEventListener('click',()=>{
+ const panel=document.querySelector(link.getAttribute('href'));
+ if(panel)panel.open=true;
+}));
