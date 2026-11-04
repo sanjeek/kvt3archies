@@ -69,8 +69,8 @@ document.addEventListener('click',e=>{const reference=e.target.closest('[data-in
 projectDialog.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){e.preventDefault();setProject(projectIndex-1);}if(e.key==='ArrowRight'){e.preventDefault();setProject(projectIndex+1);}});document.querySelector('#project-enquire').addEventListener('click',()=>projectDialog.close());
 [projectDialog,privacyDialog].forEach(dialog=>{dialog.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>document.body.classList.remove('dialog-open'));dialog.addEventListener('click',e=>{if(e.target!==dialog)return;const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();});});
 document.querySelector('#privacy-open').addEventListener('click',()=>{privacyDialog.showModal();document.body.classList.add('dialog-open');});
-let slideIndex=0;const heroImage=document.querySelector('#hero-image'),heroOpen=document.querySelector('.hero-open');
-function changeSlide(direction){slideIndex=(slideIndex+direction+3)%3;const p=inspirations[slideIndex];heroImage.src=p.image;heroImage.alt=p.alt;heroOpen.dataset.inspiration=slideIndex;document.querySelector('#slide-count').textContent=`${String(slideIndex+1).padStart(2,'0')} / 03`;}
+let slideIndex=0;const heroImage=document.querySelector('#hero-image');
+function changeSlide(direction){slideIndex=(slideIndex+direction+3)%3;const p=inspirations[slideIndex];heroImage.src=p.image;heroImage.alt=p.alt;document.querySelector('#slide-count').textContent=`${String(slideIndex+1).padStart(2,'0')} / 03`;}
 document.querySelector('#slide-prev').addEventListener('click',()=>changeSlide(-1));document.querySelector('#slide-next').addEventListener('click',()=>changeSlide(1));
 // Enquiries use the form's native HTTPS POST with provider spam protection.
 document.querySelector('#year').textContent=new Date().getFullYear();
