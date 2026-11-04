@@ -12,26 +12,26 @@ const inspirations=[
   {
     "title": "Modern lines, open living",
     "kind": "image",
-    "label": "Architectural inspiration / Reference image",
+    "label": "Reference photography",
     "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2200&q=85",
     "alt": "Modern residence with clean architectural lines — reference photograph",
-    "description": "Contemporary residential architecture shown as visual inspiration. Reference photography from Unsplash; this is not presented as a KVT 3 Architects project."
+    "description": "Contemporary residential architecture. Reference image · Unsplash."
   },
   {
     "title": "Light & material",
     "kind": "image",
-    "label": "Architectural inspiration / Reference image",
+    "label": "Reference photography",
     "image": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2200&q=85",
     "alt": "Contemporary home with natural materials — reference photograph",
-    "description": "A reference for a contemporary architectural mood: natural materials, generous openings and a restrained palette. Photography from Unsplash, not a KVT 3 project."
+    "description": "Natural materials, generous openings and a restrained palette. Reference image · Unsplash."
   },
   {
     "title": "Space to unwind",
     "kind": "image",
-    "label": "Architectural inspiration / Reference image",
+    "label": "Reference photography",
     "image": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2200&q=85",
     "alt": "Light-filled contemporary living space — reference photograph",
-    "description": "Modern interior reference photography from Unsplash. Shown for visual inspiration, rather than as a completed KVT 3 Architects project."
+    "description": "A contemporary study in light, space and calm. Reference image · Unsplash."
   }
 ];
 const grid=document.querySelector('#project-grid');
@@ -74,3 +74,21 @@ function changeSlide(direction){slideIndex=(slideIndex+direction+3)%3;const p=in
 document.querySelector('#slide-prev').addEventListener('click',()=>changeSlide(-1));document.querySelector('#slide-next').addEventListener('click',()=>changeSlide(1));
 document.querySelector('#enquiry-form').addEventListener('submit',e=>{e.preventDefault();const form=e.currentTarget;if(!form.reportValidity())return;const data=new FormData(form),subject=`Website enquiry — ${data.get('service')}`,body=`Name: ${data.get('name')}\nEmail: ${data.get('email')}\nService: ${data.get('service')}\nProject location: ${data.get('location')||'Not specified'}\n\n${data.get('message')}`;window.location.href=`mailto:kvt3archies@optusnet.com.au?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;document.querySelector('#form-status').textContent='Your email app should open with a draft. Review it and send it to complete your enquiry. If it does not open, email kvt3archies@optusnet.com.au directly.';});
 document.querySelector('#year').textContent=new Date().getFullYear();
+
+// Progressive enhancement: content stays visible if motion or observer support is unavailable.
+const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+if('IntersectionObserver' in window && !reducedMotion.matches){
+ const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('entered');observer.unobserve(entry.target);}});
+ },{threshold:0.12});
+ document.querySelectorAll('.intro,.section-heading,.practice-copy,.statement h2,.expertise-intro,.process-grid article,.contact-heading').forEach(el=>observer.observe(el));
+}
+const progress=document.querySelector('.reading-progress');
+let scrollQueued=false;
+function updateScroll(){
+ const max=document.documentElement.scrollHeight-window.innerHeight;
+ progress.style.transform='scaleX('+(max>0?Math.min(1,Math.max(0,window.scrollY/max)):0)+')';
+ scrollQueued=false;
+}
+window.addEventListener('scroll',()=>{if(!scrollQueued){scrollQueued=true;window.requestAnimationFrame(updateScroll);}},{passive:true});
+updateScroll();
